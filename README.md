@@ -18,7 +18,7 @@ This is a simple **Tic Tac Toe** game built using **HTML, CSS, and JavaScript**.
 ## 📌 How to Play
 1. Clone this repository:
    ```sh
-   git clone https://github.com/your-username/tic-tac-toe.git
+   https://github.com/ayushsharma1603/Tic-Tac-Toe.git
    ```
 2. Open the **index.html** file in a browser.
 3. Players take turns clicking on empty cells.
