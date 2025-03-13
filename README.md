@@ -28,6 +28,7 @@ This is a simple **Tic Tac Toe** game built using **HTML, CSS, and JavaScript**.
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to fork this repository and submit a pull request with your improvements.
+
 ---
 Happy Coding! 🎉
 
