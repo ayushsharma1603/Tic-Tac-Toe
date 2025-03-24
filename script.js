@@ -23,7 +23,7 @@ const checkWin = () => {
         if (boxes[a].innerHTML !== "" && boxes[a].innerHTML === boxes[b].innerHTML && boxes[a].innerHTML === boxes[c].innerHTML) {
             turnInfo.innerHTML = `🎉 ${boxes[a].innerHTML} Wins!......`;
             highlightWinningBoxes(pattern);
-            danceGif.style.display='block'
+            danceGif.id="dance"
             win.play();
             return true;
         }
@@ -64,7 +64,7 @@ const resetGame = () => {
     });
     turn = "X"; // Reset turn to X
     turnInfo.innerHTML = `Turn for ${turn}`; // Update turn info
-    danceGif.style.display="none";
+    danceGif.id="nodance";
 };
 
 // Add event listeners to each box
