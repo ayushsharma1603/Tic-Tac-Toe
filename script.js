@@ -4,6 +4,11 @@ const boxes = document.querySelectorAll(".boxtext");
 const resetButton = document.getElementById("reset");
 let danceGif = document.querySelector(".imagecontainer img");
 
+const write = new Audio("write.mp3")
+const win = new Audio("win.wav")
+let start =new Audio("preview.mp3")
+let draw =new Audio("draw.wav")
+
 // Winning combinations
 const winPatterns = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
@@ -19,6 +24,7 @@ const checkWin = () => {
             turnInfo.innerHTML = `🎉 ${boxes[a].innerHTML} Wins!......`;
             highlightWinningBoxes(pattern);
             danceGif.style.display='block'
+            win.play();
             return true;
         }
     }
@@ -37,6 +43,7 @@ const checkDraw = () => {
     let allFilled = [...boxes].every(box => box.innerHTML !== "");
     if (allFilled) {
         turnInfo.innerHTML = `It's a Draw! Click Reset`;
+        draw.play()
         return true;
     }
     return false;
@@ -50,6 +57,7 @@ const changeTurn = () => {
 
 // Function to reset the game
 const resetGame = () => {
+    start.play()
     boxes.forEach(box => {
         box.innerHTML = "";
         box.parentElement.classList.remove("winning-box");
@@ -67,6 +75,7 @@ document.querySelectorAll(".box").forEach(box => {
         // If box is empty and there's no winner, fill it with the current turn's symbol
         if (textbox && textbox.innerHTML === "" && !checkWin()) { 
             textbox.innerHTML = turn; 
+            write.play();
             if (checkWin() || checkDraw()) return; // Stop further moves if game is over
             changeTurn(); // Switch turn after move
         }
